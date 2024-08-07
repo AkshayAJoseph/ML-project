@@ -68,5 +68,19 @@
     "title": "End to End machine learning workflow",
     "section": "5. Model Selection",
     "text": "5. Model Selection\nAfter training the model, we will evaluate its performance using various metrics such as accuracy and classification report. This will help us understand how well the model is performing and whether any improvements are needed. In this context, the RandomForestClassifier model is the winner. So we will select and save this model for deployment.\n\n\nCode\njoblib.dump(Rf_model, 'rf_model.sav')\n\n\n['rf_model.sav']"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ML project",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   }
 ]
