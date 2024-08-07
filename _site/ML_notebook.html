@@ -217,7 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="objective">2.Objective</h2>
 <p>Our objective is to build a classification model that can accurately predict the species of an iris flower based on its measurements. We will explore the dataset, perform necessary preprocessing, and select an appropriate classification algorithm to achieve this goal.</p>
 <p>## 3.Data Exploration and Preprocessing - Exploratory Data Analysis (EDA): We will begin by analyzing the dataset to understand its structure and characteristics. This includes visualizing distributions, checking for missing values, and examining class balance. In this stage we need to load the dataset using appropriate <code>python</code> libraries. We want to follow a systematic approach to understand the dataset’s structure, clean the data, and gain insights. Here’s a step-by-step procedure for EDA using Python. As the first step let’s load necessary <code>python</code> libraries for this job.</p>
-<div id="c496d4bb" class="cell" data-execution_count="1">
+<div id="16c1e45f" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># loading necessary libraries</span></span>
@@ -227,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="54596d9e" class="cell" data-execution_count="2">
+<div id="f5f3d0be" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># used to supress warning</span></span>
@@ -237,7 +237,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>In this EDA process, libraries such as <code>pandas</code>, <code>seaborn</code>, <code>matplotlib</code>, and <code>scikit-learn</code> are essential. <code>Pandas</code> is used for efficient data manipulation and preprocessing, allowing us to load, clean, and manage the dataset seamlessly. <code>Seaborn</code> and <code>matplotlib</code> provide advanced visualization capabilities to explore the distribution, outliers, and relationships among features, which are crucial for understanding the dataset’s structure and potential issues. Together, these libraries offer a comprehensive toolkit for conducting thorough exploratory data analysis, ensuring that the dataset is well-understood and ready for subsequent modeling.</p>
 <p>In the next step, we load the Iris dataset directly from a remote URL using <code>pandas.</code> The code <code>iris_df = pd.read_csv('https://raw.githubusercontent.com/sijuswamy/Model_Deployment/main/iris.csv')</code> reads the CSV file from the specified GitHub repository and creates a DataFrame named iris_df, which contains the dataset for further analysis.</p>
-<div id="22c5167c" class="cell" data-execution_count="3">
+<div id="68d5cdd7" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># loading dataset</span></span>
@@ -245,7 +245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <p><em>Viewing the beggining Dataset</em>: The code iris_df.head() displays the first five rows of the iris_df DataFrame, providing a quick overview of the dataset’s structure and the initial entries. We just visualize first 5 samples in the dataset as a table.</p>
-<div id="143b122c" class="cell" data-execution_count="4">
+<div id="722f5466" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>iris_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -313,7 +313,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><em>Viewing the End of the Dataset</em>: The code <code>iris_df.tail()</code> displays the last five rows of the <code>iris_df</code> DataFrame, offering insight into the final entries and the dataset’s structure at its end.</p>
-<div id="6d1ac7fd" class="cell" data-execution_count="5">
+<div id="01736b14" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>iris_df.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -381,7 +381,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><em>Checking the Dataset Shape</em>: The code <code>iris_df.shape</code> returns a tuple representing the dimensions of the <code>iris_df</code> DataFrame, indicating the number of rows and columns in the dataset.</p>
-<div id="31eaa6cf" class="cell" data-execution_count="6">
+<div id="8aa8d964" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>iris_df.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -403,7 +403,7 @@ Tip
 <p>Checking for duplicates is important because duplicate rows can skew analysis, introduce bias, and affect the performance of machine learning models. By identifying and removing duplicates, we ensure that each observation is unique and that the dataset accurately represents the underlying data without redundancy</p>
 </div>
 </div>
-<div id="8585efc3" class="cell" data-execution_count="7">
+<div id="3bf83b43" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(iris_df.duplicated().<span class="bu">sum</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -413,7 +413,7 @@ Tip
 </div>
 </div>
 <p>Identifying Duplicate Rows: The code iris_df[iris_df.duplicated()] filters and displays the duplicate rows in the iris_df DataFrame, allowing us to inspect and address any redundancy in the dataset by showing which rows are duplicated.</p>
-<div id="f6a759d0" class="cell" data-execution_count="8">
+<div id="ddf766c0" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>iris_df[iris_df.duplicated()]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -449,7 +449,7 @@ Tip
 </div>
 </div>
 <p>Checking Class Distribution and Data Imbalance: The code iris_df[‘variety’].value_counts() counts the number of occurrences of each unique value in the variety column of the iris_df DataFrame, providing insight into the distribution of classes and helping to identify any class imbalances in the dataset.</p>
-<div id="25ce3ccb" class="cell" data-execution_count="9">
+<div id="52c93a2a" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>iris_df[<span class="st">'variety'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -476,7 +476,7 @@ Caution
 </div>
 </div>
 <p>Checking for Missing Values: The code iris_df.isnull().sum(axis=0) calculates the number of missing values for each column in the iris_df DataFrame, helping to identify and address any gaps in the dataset that may need to be handled before analysis or modeling.</p>
-<div id="3f369913" class="cell" data-execution_count="10">
+<div id="965aaf34" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>iris_df.isnull().<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -492,7 +492,7 @@ dtype: int64</code></pre>
 </div>
 <p>Checking for missing values is essential because missing data can compromise the integrity of the analysis and modeling process. By identifying columns with missing values, we can take appropriate steps to handle them—such as imputation or removal—ensuring that the dataset is complete and reliable for generating accurate insights and predictions.</p>
 <p>Statistical summary: Checking skewness, kurtosis, and correlation is essential for understanding data distribution and feature relationships. Skewness measures asymmetry; values between -0.5 and 0.5 indicate a fairly normal distribution, while values beyond this range suggest significant skewness. Kurtosis assesses the heaviness of tails; values close to 3 indicate a normal distribution, while values much higher or lower suggest the presence or absence of outliers, respectively. Correlation examines feature relationships, with values close to 1 or -1 indicating strong correlations that could lead to multicollinearity. Analyzing these metrics helps in identifying data transformation needs, managing outliers, and optimizing feature selection, ultimately improving model performance and reliability. Before performing the statistical operations, check for the categorical variables. If so remove them and apply statistical operations on that pruned dataset. The following code will do that.</p>
-<div id="35e4cfc8" class="cell" data-execution_count="11">
+<div id="4b86ee06" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if 'variety' column exists in the DataFrame</span></span>
@@ -508,7 +508,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p>## 3.b Statistical Summary- Skewness, Kurtosis and Correlation <em>Checking Skewness</em>: The code iris_num.skew() calculates the skewness of each numeric column in the iris_num DataFrame, providing insights into the asymmetry of the data distribution. Skewness values between -0.5 and 0.5 suggest a relatively normal distribution, while values outside this range indicate potential skewness that may require transformation for better modeling.</p>
-<div id="6c4434f3" class="cell" data-execution_count="12">
+<div id="e09e652b" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a> iris_num.skew()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -522,7 +522,7 @@ dtype: float64</code></pre>
 </div>
 </div>
 <p><em>Checking Kurtosis</em>: The code iris_num.kurt() calculates the kurtosis of each numeric column in the iris_num DataFrame, which measures the “tailedness” of the data distribution. Values close to 3 suggest a distribution similar to the normal distribution, while values significantly higher or lower indicate heavy or light tails, respectively, which may point to the presence of outliers or a lack thereof.</p>
-<div id="004b8745" class="cell" data-execution_count="13">
+<div id="acf7abeb" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>iris_num.kurt()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -540,7 +540,7 @@ dtype: float64</code></pre>
 <h2 class="anchored" data-anchor-id="c-exploratory-data-analysis">3.c Exploratory Data Analysis</h2>
 <p>In this section we will perform various graphical analysis of features over the classes of target.</p>
 <p><em>Visualizing Class Distribution</em>: The code print(iris_df[‘variety’].value_counts()) prints the count of each unique value in the variety column, showing the distribution of classes in the dataset. The sns.countplot(iris_df[‘variety’]) function from Seaborn creates a count plot to visually represent the distribution of classes, helping to easily identify any class imbalances or differences in class frequencies.</p>
-<div id="f45c784f" class="cell" data-execution_count="14">
+<div id="247ac5de" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(iris_df[<span class="st">'variety'</span>].value_counts())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -554,7 +554,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p><em>Visualizing Sepal Dimensions</em>: The code plt.title(‘Comparison between sepal width and length’) sets the title for the plot, while sns.scatterplot(x=iris_df[‘sepal.length’], y=iris_df[‘sepal.width’]) creates a scatter plot using Seaborn to visualize the relationship between sepal length and sepal width. This visualization helps in understanding the correlation between these two features and identifying any patterns or trends in the data</p>
-<div id="1e7fba51" class="cell" data-execution_count="15">
+<div id="a5f9a024" class="cell" data-execution_count="15">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">5</span>))</span>
@@ -570,7 +570,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p><em>Enhanced Scatter Plot with Species</em>: The code plt.figure(figsize=(16,9)) sets the size of the plot, and plt.title(‘Comparison between sepal width and length on the basis of species’) adds a title to the plot. The sns.scatterplot(x=iris_df[‘sepal.length’], y=iris_df[‘sepal.width’], hue=iris_df[‘variety’], s=50) function creates a scatter plot where each point represents sepal length and width, with different colors indicating different species. This visualization helps in comparing the sepal dimensions across species and identifying patterns or clusters in the data. The plt.show() command displays the plot.</p>
-<div id="bde1abe8" class="cell" data-execution_count="16">
+<div id="a3d20a59" class="cell" data-execution_count="16">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">5</span>))</span>
@@ -587,7 +587,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p><em>Visualizing Petal Dimensions</em>: The code <code>plt.title('Comparison between petal width and length')</code>sets the title for the plot, while <code>sns.scatterplot(x=iris_df['petal.length'], y=iris_df['petal.width'])</code> creates a scatter plot using Seaborn to visualize the relationship between petal length and petal width. This plot helps in examining the correlation between these two features and understanding how they vary with each other in the dataset</p>
-<div id="8bca2801" class="cell" data-execution_count="17">
+<div id="c6844580" class="cell" data-execution_count="17">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">5</span>))</span>
@@ -603,7 +603,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p><em>Enhanced Scatter Plot with Species for Petal Dimensions</em>: The code <code>plt.figure(figsize=(10,9))</code>sets the size of the plot, and <code>plt.title('Comparison between Petal width and length on the basis of species')</code>adds a title. The <code>sns.scatterplot(x=iris_df['petal.length'], y=iris_df['petal.width'], hue=iris_df['variety'], s=50)</code> function creates a scatter plot where petal length and width are plotted with different colors representing species. This visualization facilitates comparison of petal dimensions across different species, helping to identify patterns or clusters. The <code>plt.show()</code> command displays the plot.</p>
-<div id="bb571ba1" class="cell" data-execution_count="18">
+<div id="c1fb9e60" class="cell" data-execution_count="18">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">5</span>))</span>
@@ -622,7 +622,7 @@ Name: count, dtype: int64</code></pre>
 <p>From the above visualizations, we can tell that the iris-setosa species has smaller sepal length but higher width. While we see Versicolor lies in almost middle for length as well as width. While Virginica has larger sepal lengths and smaller sepal widths. We can see two separate clusters but not sure about the species so let’s bring the species into the equation as well.</p>
 <p>We see that setosa has the smallest petal length as well as petal widths, while Versicolor has average petal length and petal width while the virginica species has the highest petal length as well as petal width.</p>
 <p>Now let’s visualize all the columns relationship using pair plots.</p>
-<div id="7eadcd6f" class="cell" data-execution_count="19">
+<div id="a18d25e8" class="cell" data-execution_count="19">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">5</span>))</span>
@@ -641,7 +641,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 <p>Summary of EDA: Pair plot represents the relationship between our target and the variables. We can see that the setosa species has a large difference in its characteristics when compared to the other species, it has smaller petal width and length while its sepal width is high and its sepal length is low. Similar kind of conclusions can be drawn for the other species like the Versicolor species usually have average dimensions whether it is sepal or pedal. While virginica has high pedal width and length while it has small sepal width but large sepal length. Also it is noted that Petal length and petal width are the most suitable features to classify the iris flowers in to its different varities.</p>
 <p>Calculating Feature Correlation: The code iris_num.corr() computes the correlation matrix for the numeric columns in the iris_num DataFrame. This matrix shows the pairwise correlation coefficients between features, helping to identify linear relationships and dependencies among them, which can be crucial for feature selection and understanding multicollinearity in the dataset.</p>
-<div id="320b8241" class="cell" data-execution_count="20">
+<div id="0515268d" class="cell" data-execution_count="20">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>iris_num.corr()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -696,7 +696,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>A visual representation of the correlation matrix is shown below.</p>
-<div id="c2abb6b5" class="cell" data-execution_count="21">
+<div id="a924dc9e" class="cell" data-execution_count="21">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize <span class="op">=</span> (<span class="dv">6</span>,<span class="dv">5</span>))</span>
@@ -711,7 +711,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>From the above heatmap, we see that petal length and petal width have a high correlation, petal width and sepal length have good correlation as well as petal length and sepal length have good correlations. <em>Frequency distribution of feature set</em>: Let’s see the distribution of data for the various columns of our data set.</p>
-<div id="215aacf5" class="cell" data-execution_count="22">
+<div id="b494cc0c" class="cell" data-execution_count="22">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">5</span>))</span>
@@ -735,7 +735,7 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="d-univariate-feature-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="d-univariate-feature-analysis">3.d Univariate Feature Analysis</h2>
-<div id="2883bd6a" class="cell" data-execution_count="23">
+<div id="3c55bee4" class="cell" data-execution_count="23">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>sns.FacetGrid(iris_df,hue<span class="op">=</span><span class="st">"variety"</span>,height<span class="op">=</span><span class="dv">5</span>).<span class="bu">map</span>(sns.distplot,<span class="st">"petal.length"</span>).add_legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -749,7 +749,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p><strong>Univariate feature analysis</strong>: The code sns.FacetGrid(iris_df, hue=“variety”, height=5).map(sns.distplot, “petal.width”).add_legend() creates a FacetGrid using Seaborn library to visualize the distribution of petal.width across different species in the iris_df DataFrame. The hue=“variety” parameter ensures that the distribution plots are colored according to the species, while height=5 sets the size of the plots. This visualization helps in analyzing the distribution and density of the petal width feature for each species, providing insights into how this feature varies across different classes.</p>
-<div id="0a1be8c2" class="cell" data-execution_count="24">
+<div id="5225c4aa" class="cell" data-execution_count="24">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>sns.FacetGrid(iris_df,hue<span class="op">=</span><span class="st">"variety"</span>,height<span class="op">=</span><span class="dv">5</span>).<span class="bu">map</span>(sns.distplot,<span class="st">"petal.width"</span>).add_legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -762,7 +762,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="9c7cc70a" class="cell" data-execution_count="25">
+<div id="80e6dc87" class="cell" data-execution_count="25">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>sns.FacetGrid(iris_df,hue<span class="op">=</span><span class="st">"variety"</span>,height<span class="op">=</span><span class="dv">5</span>).<span class="bu">map</span>(sns.distplot,<span class="st">"sepal.length"</span>).add_legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -775,7 +775,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="92e5b41d" class="cell" data-execution_count="26">
+<div id="b7d083c8" class="cell" data-execution_count="26">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>sns.FacetGrid(iris_df,hue<span class="op">=</span><span class="st">"variety"</span>,height<span class="op">=</span><span class="dv">5</span>).<span class="bu">map</span>(sns.distplot,<span class="st">"sepal.width"</span>).add_legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -793,7 +793,7 @@ Name: count, dtype: int64</code></pre>
 <h2 class="anchored" data-anchor-id="e-statistical-feature-analysis">3.e Statistical Feature Analysis</h2>
 <p>In this section various features are analysed in more detail. Presence of outlair and normality of feature distribution will be checked before ML model building.</p>
 <p>Boxplots for Feature Analysis: The code <code>fig, axes = plt.subplots(2, 2, figsize=(16,9))</code> creates a 2x2 grid of subplots with a figure size of 16x9 inches. Each <code>sns.boxplot()</code> function call plots the distribution of a specific feature <code>(petal.width, petal.length, sepal.length, sepal.width)</code> against the <code>variety</code> of the iris species. The <code>orient='v'</code> parameter specifies vertical boxplots. This visualization helps in comparing the distributions of different features across species, highlighting differences in feature ranges, central tendencies, and potential outliers. The <code>plt.show()</code> command displays all the plots.</p>
-<div id="9470e4a6" class="cell" data-execution_count="27">
+<div id="6552c82c" class="cell" data-execution_count="27">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">5</span>))</span>
@@ -817,7 +817,7 @@ Name: count, dtype: int64</code></pre>
 <li><p>The Versicolor species has average features</p></li>
 <li><p>The virginica species has the longest features widths and lengths as compared to others. We can further see the distributions using the violin plot on our dataset</p></li>
 </ul>
-<div id="530e9bab" class="cell" data-execution_count="28">
+<div id="4fd89a21" class="cell" data-execution_count="28">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">5</span>))</span>
@@ -859,7 +859,7 @@ Name: count, dtype: int64</code></pre>
 <section id="random-forest" class="level3">
 <h3 class="anchored" data-anchor-id="random-forest">5. Random Forest</h3>
 <p>Random Forest is an ensemble method that combines multiple decision trees to improve classification performance. It reduces overfitting and improves accuracy by averaging the predictions from multiple trees, making it robust and effective for complex datasets. ## Importing Required Libraries To perform machine learning tasks and evaluate model performance, the following libraries are imported:</p>
-<div id="f7313d56" class="cell" data-execution_count="29">
+<div id="709c0581" class="cell" data-execution_count="29">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, classification_report, confusion_matrix</span>
@@ -872,7 +872,7 @@ Name: count, dtype: int64</code></pre>
 <li><strong><code>train_test_split</code></strong> from <code>sklearn.model_selection</code>: This function is used to split the dataset into training and testing subsets, ensuring that the model is trained on one portion of the data and evaluated on a separate portion.</li>
 <li><strong><code>joblib</code></strong>: This library is used for saving and loading Python objects efficiently, particularly for persisting trained models for future use. In the next immediate step, we resample and split the dataset for training and testing. This can be done as follows:</li>
 </ul>
-<div id="e8f0e349" class="cell" data-execution_count="30">
+<div id="ba2c8c36" class="cell" data-execution_count="30">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># random seed</span></span>
@@ -892,7 +892,7 @@ Name: count, dtype: int64</code></pre>
 <p>In the next section, we will create instances of all the above mentioned classification algorithms one by one.</p>
 <p>## 1. Logistic Regression To Train and Evaluate the Logistic Regression Model, follow these steps.</p>
 <p><strong>Step -1: Import Required Libraries</strong> Here we need only the LogisticRegression instance from the sklearn library. This can be done as follows.</p>
-<div id="fb3a3dcb" class="cell" data-execution_count="31">
+<div id="1a6cbf92" class="cell" data-execution_count="31">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -900,7 +900,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 <p><strong>Step-2: Initialize the Model</strong></p>
 <p>Create an instance of the Logistic Regression model:</p>
-<div id="5faae659" class="cell" data-execution_count="32">
+<div id="9dc3d3d4" class="cell" data-execution_count="32">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LogisticRegression(max_iter<span class="op">=</span><span class="dv">200</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -908,7 +908,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 <p><strong>Step-3. Train the Model</strong></p>
 <p>Fit the model to the training data:</p>
-<div id="ef7a892d" class="cell" data-execution_count="33">
+<div id="8e77d4f6" class="cell" data-execution_count="33">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>model.fit(X_train, y_train.values.ravel())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1322,7 +1322,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <p><strong>Step-4: Make Predictions</strong> Use the trained model to predict the labels for the test set:</p>
-<div id="c90e3881" class="cell" data-execution_count="34">
+<div id="bb9fd337" class="cell" data-execution_count="34">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(X_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1330,7 +1330,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <p><strong>Step-5 Evaluate the Model</strong></p>
 <p>Assess the model’s performance using confussion matrix, model accuracy and a detailed classification report:</p>
-<div id="673c9a4a" class="cell" data-execution_count="35">
+<div id="fb597099" class="cell" data-execution_count="35">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate accuracy</span></span>
@@ -1341,7 +1341,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> classification_report(y_test, y_pred)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="8bfa175a" class="cell" data-execution_count="36">
+<div id="64ca46b2" class="cell" data-execution_count="36">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot confusion matrix as a heatmap</span></span>
@@ -1360,7 +1360,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 </div>
-<div id="01755c08" class="cell" data-execution_count="37">
+<div id="9ad3ee20" class="cell" data-execution_count="37">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Accuracy: </span><span class="sc">{</span>accuracy<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
@@ -1388,7 +1388,7 @@ weighted avg       0.93      0.93      0.93        45
 <h3 class="anchored" data-anchor-id="k-nearest-neighbour-classifier">1. K-Nearest Neighbour Classifier</h3>
 <p>To Train and Evaluate the K-NN Model, follow these steps.</p>
 <p><strong>Step -1: Import Required Libraries</strong> Here we need only the LogisticRegression instance from the sklearn library. This can be done as follows.</p>
-<div id="21b39d93" class="cell" data-execution_count="38">
+<div id="1ef497e9" class="cell" data-execution_count="38">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1396,7 +1396,7 @@ weighted avg       0.93      0.93      0.93        45
 </div>
 <p><strong>Step-2: Initialize the Model</strong></p>
 <p>Create an instance of the K-NN model:</p>
-<div id="9492acbd" class="cell" data-execution_count="39">
+<div id="bcf19e99" class="cell" data-execution_count="39">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> KNeighborsClassifier(n_neighbors<span class="op">=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1404,7 +1404,7 @@ weighted avg       0.93      0.93      0.93        45
 </div>
 <p><strong>Step-3. Train the Model</strong></p>
 <p>Fit the model to the training data:</p>
-<div id="745a598f" class="cell" data-execution_count="40">
+<div id="78279362" class="cell" data-execution_count="40">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>model.fit(X_train, y_train.values.ravel())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1819,7 +1819,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <p><strong>Step-4: Make Predictions</strong></p>
 <p>Use the trained model to predict the labels for the test set:</p>
-<div id="d8697d46" class="cell" data-execution_count="41">
+<div id="eab9c6e1" class="cell" data-execution_count="41">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(X_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1827,7 +1827,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <p><strong>Step-5 Evaluate the Model</strong></p>
 <p>Assess the model’s performance using confussion matrix, model accuracy and a detailed classification report:</p>
-<div id="30b067c1" class="cell" data-execution_count="42">
+<div id="ddbcc624" class="cell" data-execution_count="42">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate accuracy</span></span>
@@ -1838,7 +1838,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> classification_report(y_test, y_pred)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="9a7195b1" class="cell" data-execution_count="43">
+<div id="f83e9aec" class="cell" data-execution_count="43">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot confusion matrix as a heatmap</span></span>
@@ -1857,7 +1857,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 </div>
-<div id="4c545cc9" class="cell" data-execution_count="44">
+<div id="b341fe01" class="cell" data-execution_count="44">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Accuracy: </span><span class="sc">{</span>accuracy<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
@@ -1884,7 +1884,7 @@ weighted avg       0.98      0.98      0.98        45
 <h3 class="anchored" data-anchor-id="support-vector-machine-classifier">3. Support Vector Machine Classifier</h3>
 <p>To Train and Evaluate the Logistic Regression Model, follow these steps.</p>
 <p>**Step -1: Import Required Libraries Here we need only the SVC instance from the sklearn library. This can be done as follows.</p>
-<div id="2606eb49" class="cell" data-execution_count="45">
+<div id="efbabff9" class="cell" data-execution_count="45">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.svm <span class="im">import</span> SVC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1892,7 +1892,7 @@ weighted avg       0.98      0.98      0.98        45
 </div>
 <p>**Step-2: Initialize the Model</p>
 <p>Create an instance of the SVC model:</p>
-<div id="cf28a0a3" class="cell" data-execution_count="46">
+<div id="94e0db18" class="cell" data-execution_count="46">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> SVC(kernel<span class="op">=</span><span class="st">'linear'</span>, C<span class="op">=</span><span class="fl">1.0</span>, random_state<span class="op">=</span>seed)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1900,7 +1900,7 @@ weighted avg       0.98      0.98      0.98        45
 </div>
 <p>**Step-3. Train the Model</p>
 <p>Fit the model to the training data:</p>
-<div id="1980988e" class="cell" data-execution_count="47">
+<div id="43b632b7" class="cell" data-execution_count="47">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>model.fit(X_train, y_train.values.ravel())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2315,7 +2315,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <p><strong>Step-4: Make Predictions</strong></p>
 <p>Use the trained model to predict the labels for the test set:</p>
-<div id="e05378ab" class="cell" data-execution_count="48">
+<div id="7afdf31a" class="cell" data-execution_count="48">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(X_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2323,7 +2323,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <p><strong>Step-5 Evaluate the Model</strong></p>
 <p>Assess the model’s performance using confussion matrix, model accuracy and a detailed classification report:</p>
-<div id="270cca89" class="cell" data-execution_count="49">
+<div id="bb03b394" class="cell" data-execution_count="49">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate accuracy</span></span>
@@ -2334,7 +2334,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> classification_report(y_test, y_pred)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="1cdec28c" class="cell" data-execution_count="50">
+<div id="3ef096e6" class="cell" data-execution_count="50">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot confusion matrix as a heatmap</span></span>
@@ -2353,7 +2353,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 </div>
-<div id="f97a6ed9" class="cell" data-execution_count="51">
+<div id="7660f938" class="cell" data-execution_count="51">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Accuracy: </span><span class="sc">{</span>accuracy<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
@@ -2380,7 +2380,7 @@ weighted avg       1.00      1.00      1.00        45
 <h3 class="anchored" data-anchor-id="random-forest-classifier">5. Random Forest Classifier</h3>
 <p>To Train and Evaluate the RandomForest Model, follow these steps.</p>
 <p><strong>Step -1: Import Required Libraries</strong> Here we need only the Random Forest instance from the sklearn library. This can be done as follows.</p>
-<div id="19268e9e" class="cell" data-execution_count="52">
+<div id="489a1a81" class="cell" data-execution_count="52">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2388,7 +2388,7 @@ weighted avg       1.00      1.00      1.00        45
 </div>
 <p><strong>Step-2: Initialize the Model</strong></p>
 <p>Create an instance of the RandomForest model:</p>
-<div id="068a020b" class="cell" data-execution_count="53">
+<div id="c26b3654" class="cell" data-execution_count="53">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>Rf_model <span class="op">=</span> RandomForestClassifier(n_estimators<span class="op">=</span><span class="dv">100</span>, random_state<span class="op">=</span>seed)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2396,7 +2396,7 @@ weighted avg       1.00      1.00      1.00        45
 </div>
 <p><strong>Step-3: Train the Model</strong></p>
 <p>Fit the model to the training data:</p>
-<div id="ee79b69a" class="cell" data-execution_count="54">
+<div id="410be993" class="cell" data-execution_count="54">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>Rf_model.fit(X_train, y_train.values.ravel())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2811,7 +2811,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <p><strong>Step-4: Make Predictions</strong></p>
 <p>Use the trained model to predict the labels for the test set:</p>
-<div id="c39d2f94" class="cell" data-execution_count="55">
+<div id="d7cfdbe2" class="cell" data-execution_count="55">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> Rf_model.predict(X_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2819,7 +2819,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <p><strong>Step-5: Evaluate the Model</strong></p>
 <p>Assess the model’s performance using confussion matrix, model accuracy and a detailed classification report:</p>
-<div id="cca82786" class="cell" data-execution_count="56">
+<div id="4aa94ebe" class="cell" data-execution_count="56">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate accuracy</span></span>
@@ -2830,7 +2830,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> classification_report(y_test, y_pred)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="88e60bf9" class="cell" data-execution_count="57">
+<div id="c92f5ac6" class="cell" data-execution_count="57">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot confusion matrix as a heatmap</span></span>
@@ -2849,7 +2849,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 </div>
-<div id="8bd7ba99" class="cell" data-execution_count="58">
+<div id="c4b876c1" class="cell" data-execution_count="58">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Accuracy: </span><span class="sc">{</span>accuracy<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
@@ -2877,7 +2877,7 @@ weighted avg       0.90      0.89      0.89        45
 <section id="model-selection" class="level2">
 <h2 class="anchored" data-anchor-id="model-selection">5. Model Selection</h2>
 <p>After training the model, we will evaluate its performance using various metrics such as accuracy and classification report. This will help us understand how well the model is performing and whether any improvements are needed. In this context, the RandomForestClassifier model is the winner. So we will select and save this model for deployment.</p>
-<div id="f124b89b" class="cell" data-execution_count="59">
+<div id="1780a25c" class="cell" data-execution_count="59">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>joblib.dump(Rf_model, <span class="st">'rf_model.sav'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
