@@ -11,7 +11,7 @@ website:
       - href: ML_notebook.qmd
 format:
   html:
-    theme: architects
+    theme: architect
     css: styles.css
     toc: true
 
