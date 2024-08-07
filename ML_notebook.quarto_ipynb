@@ -43,7 +43,7 @@
         "- Exploratory Data Analysis (EDA): We will begin by analyzing the dataset to understand its structure and characteristics. This includes visualizing distributions, checking for missing values, and examining class balance.\n",
         "In this stage we need to load the dataset using appropriate `python` libraries. We want to follow a systematic approach to understand the dataset’s structure, clean the data, and gain insights. Here’s a step-by-step procedure for EDA using Python. As the first step let’s load necessary `python` libraries for this job.\n"
       ],
-      "id": "050f1d79"
+      "id": "dbfa4445"
     },
     {
       "cell_type": "code",
@@ -55,7 +55,7 @@
         "import matplotlib.pyplot as plt\n",
         "import seaborn as sns"
       ],
-      "id": "b93b308c",
+      "id": "060f7717",
       "execution_count": null,
       "outputs": []
     },
@@ -67,7 +67,7 @@
         "import warnings\n",
         "warnings.filterwarnings('ignore')"
       ],
-      "id": "85482a3c",
+      "id": "047a30de",
       "execution_count": null,
       "outputs": []
     },
@@ -79,7 +79,7 @@
         "\n",
         "In the next step, we load the Iris dataset directly from a remote URL using `pandas.` The code `iris_df = pd.read_csv('https://raw.githubusercontent.com/sijuswamy/Model_Deployment/main/iris.csv')` reads the CSV file from the specified GitHub repository and creates a DataFrame named iris_df, which contains the dataset for further analysis.\n"
       ],
-      "id": "6b5b1aac"
+      "id": "e7334a96"
     },
     {
       "cell_type": "code",
@@ -88,7 +88,7 @@
         "# loading dataset\n",
         "iris_df=pd.read_csv('https://raw.githubusercontent.com/sijuswamy/Model_Deployment/main/iris.csv')"
       ],
-      "id": "aa3885f0",
+      "id": "2278a37f",
       "execution_count": null,
       "outputs": []
     },
@@ -98,7 +98,7 @@
       "source": [
         "*Viewing the beggining Dataset*: The code iris_df.head() displays the first five rows of the iris_df DataFrame, providing a quick overview of the dataset’s structure and the initial entries. We just visualize first 5 samples in the dataset as a table.\n"
       ],
-      "id": "90f6ea50"
+      "id": "9c1d7a99"
     },
     {
       "cell_type": "code",
@@ -106,7 +106,7 @@
       "source": [
         "iris_df.head()"
       ],
-      "id": "00d7e491",
+      "id": "0b772923",
       "execution_count": null,
       "outputs": []
     },
@@ -116,7 +116,7 @@
       "source": [
         "*Viewing the End of the Dataset*: The code `iris_df.tail()` displays the last five rows of the `iris_df` DataFrame, offering insight into the final entries and the dataset’s structure at its end.\n"
       ],
-      "id": "d28e5bf4"
+      "id": "8da0f508"
     },
     {
       "cell_type": "code",
@@ -124,7 +124,7 @@
       "source": [
         "iris_df.tail()"
       ],
-      "id": "6a241d0c",
+      "id": "c05d6e27",
       "execution_count": null,
       "outputs": []
     },
@@ -134,7 +134,7 @@
       "source": [
         "*Checking the Dataset Shape*: The code `iris_df.shape` returns a tuple representing the dimensions of the `iris_df` DataFrame, indicating the number of rows and columns in the dataset.\n"
       ],
-      "id": "ffda705f"
+      "id": "7b6a953b"
     },
     {
       "cell_type": "code",
@@ -142,7 +142,7 @@
       "source": [
         "iris_df.shape"
       ],
-      "id": "32381615",
+      "id": "e8f6c658",
       "execution_count": null,
       "outputs": []
     },
@@ -154,7 +154,7 @@
         "Checking for duplicates is important because duplicate rows can skew analysis, introduce bias, and affect the performance of machine learning models. By identifying and removing duplicates, we ensure that each observation is unique and that the dataset accurately represents the underlying data without redundancy\n",
         ":::\n"
       ],
-      "id": "e88ed2b9"
+      "id": "a1e24feb"
     },
     {
       "cell_type": "code",
@@ -162,7 +162,7 @@
       "source": [
         "print(iris_df.duplicated().sum())"
       ],
-      "id": "32a98ab1",
+      "id": "b199f56b",
       "execution_count": null,
       "outputs": []
     },
@@ -172,7 +172,7 @@
       "source": [
         "Identifying Duplicate Rows: The code iris_df[iris_df.duplicated()] filters and displays the duplicate rows in the iris_df DataFrame, allowing us to inspect and address any redundancy in the dataset by showing which rows are duplicated.\n"
       ],
-      "id": "2cda5e6c"
+      "id": "d88d643b"
     },
     {
       "cell_type": "code",
@@ -180,7 +180,7 @@
       "source": [
         "iris_df[iris_df.duplicated()]"
       ],
-      "id": "fa338e6e",
+      "id": "c2cafefc",
       "execution_count": null,
       "outputs": []
     },
@@ -190,7 +190,7 @@
       "source": [
         "Checking Class Distribution and Data Imbalance: The code iris_df['variety'].value_counts() counts the number of occurrences of each unique value in the variety column of the iris_df DataFrame, providing insight into the distribution of classes and helping to identify any class imbalances in the dataset.\n"
       ],
-      "id": "ec9aa01e"
+      "id": "ae34e88c"
     },
     {
       "cell_type": "code",
@@ -198,7 +198,7 @@
       "source": [
         "iris_df['variety'].value_counts()"
       ],
-      "id": "1e458562",
+      "id": "f020f697",
       "execution_count": null,
       "outputs": []
     },
@@ -211,7 +211,7 @@
         ":::\n",
         "Checking for Missing Values: The code iris_df.isnull().sum(axis=0) calculates the number of missing values for each column in the iris_df DataFrame, helping to identify and address any gaps in the dataset that may need to be handled before analysis or modeling.\n"
       ],
-      "id": "08a85367"
+      "id": "942ddead"
     },
     {
       "cell_type": "code",
@@ -219,7 +219,7 @@
       "source": [
         "iris_df.isnull().sum(axis=0)"
       ],
-      "id": "fef42588",
+      "id": "baebb551",
       "execution_count": null,
       "outputs": []
     },
@@ -231,7 +231,7 @@
         "\n",
         "Statistical summary: Checking skewness, kurtosis, and correlation is essential for understanding data distribution and feature relationships. Skewness measures asymmetry; values between -0.5 and 0.5 indicate a fairly normal distribution, while values beyond this range suggest significant skewness. Kurtosis assesses the heaviness of tails; values close to 3 indicate a normal distribution, while values much higher or lower suggest the presence or absence of outliers, respectively. Correlation examines feature relationships, with values close to 1 or -1 indicating strong correlations that could lead to multicollinearity. Analyzing these metrics helps in identifying data transformation needs, managing outliers, and optimizing feature selection, ultimately improving model performance and reliability. Before performing the statistical operations, check for the categorical variables. If so remove them and apply statistical operations on that pruned dataset. The following code will do that.\n"
       ],
-      "id": "a8a8bffc"
+      "id": "0c6e9406"
     },
     {
       "cell_type": "code",
@@ -245,7 +245,7 @@
         "else:\n",
         "    print(\"Column 'variety' not found in the DataFrame.\")"
       ],
-      "id": "38362fc1",
+      "id": "92b71f5d",
       "execution_count": null,
       "outputs": []
     },
@@ -256,7 +256,7 @@
         " ## 3.b Statistical Summary- Skewness, Kurtosis and Correlation\n",
         " *Checking Skewness*: The code iris_num.skew() calculates the skewness of each numeric column in the iris_num DataFrame, providing insights into the asymmetry of the data distribution. Skewness values between -0.5 and 0.5 suggest a relatively normal distribution, while values outside this range indicate potential skewness that may require transformation for better modeling.\n"
       ],
-      "id": "ed4d4fe4"
+      "id": "40e6cd54"
     },
     {
       "cell_type": "code",
@@ -264,7 +264,7 @@
       "source": [
         " iris_num.skew()"
       ],
-      "id": "954ae9ad",
+      "id": "9f3d861a",
       "execution_count": null,
       "outputs": []
     },
@@ -274,7 +274,7 @@
       "source": [
         "*Checking Kurtosis*: The code iris_num.kurt() calculates the kurtosis of each numeric column in the iris_num DataFrame, which measures the “tailedness” of the data distribution. Values close to 3 suggest a distribution similar to the normal distribution, while values significantly higher or lower indicate heavy or light tails, respectively, which may point to the presence of outliers or a lack thereof.\n"
       ],
-      "id": "77f4e131"
+      "id": "2e7423a0"
     },
     {
       "cell_type": "code",
@@ -282,7 +282,7 @@
       "source": [
         "iris_num.kurt()"
       ],
-      "id": "1f10db93",
+      "id": "6e40f0ff",
       "execution_count": null,
       "outputs": []
     },
@@ -295,7 +295,7 @@
         "\n",
         "*Visualizing Class Distribution*: The code print(iris_df['variety'].value_counts()) prints the count of each unique value in the variety column, showing the distribution of classes in the dataset. The sns.countplot(iris_df['variety']) function from Seaborn creates a count plot to visually represent the distribution of classes, helping to easily identify any class imbalances or differences in class frequencies.\n"
       ],
-      "id": "1aed5c15"
+      "id": "be419f58"
     },
     {
       "cell_type": "code",
@@ -303,7 +303,7 @@
       "source": [
         "print(iris_df['variety'].value_counts())"
       ],
-      "id": "d8a967f8",
+      "id": "5e395515",
       "execution_count": null,
       "outputs": []
     },
@@ -313,7 +313,7 @@
       "source": [
         "*Visualizing Sepal Dimensions*: The code plt.title('Comparison between sepal width and length') sets the title for the plot, while sns.scatterplot(x=iris_df['sepal.length'], y=iris_df['sepal.width']) creates a scatter plot using Seaborn to visualize the relationship between sepal length and sepal width. This visualization helps in understanding the correlation between these two features and identifying any patterns or trends in the data\n"
       ],
-      "id": "3e3826e4"
+      "id": "2b3479fd"
     },
     {
       "cell_type": "code",
@@ -323,7 +323,7 @@
         "plt.title('Comparison between sepal width and length')\n",
         "sns.scatterplot(x=iris_df['sepal.length'], y=iris_df['sepal.width']);"
       ],
-      "id": "5cd53ad5",
+      "id": "5f9debd5",
       "execution_count": null,
       "outputs": []
     },
@@ -333,7 +333,7 @@
       "source": [
         "*Enhanced Scatter Plot with Species*: The code plt.figure(figsize=(16,9)) sets the size of the plot, and plt.title('Comparison between sepal width and length on the basis of species') adds a title to the plot. The sns.scatterplot(x=iris_df['sepal.length'], y=iris_df['sepal.width'], hue=iris_df['variety'], s=50) function creates a scatter plot where each point represents sepal length and width, with different colors indicating different species. This visualization helps in comparing the sepal dimensions across species and identifying patterns or clusters in the data. The plt.show() command displays the plot.\n"
       ],
-      "id": "df64e7c7"
+      "id": "5882b454"
     },
     {
       "cell_type": "code",
@@ -344,7 +344,7 @@
         "sns.scatterplot(x=iris_df['sepal.length'], y=iris_df['sepal.width'], hue = iris_df['variety'], s= 50);\n",
         "plt.show()"
       ],
-      "id": "0a97fec9",
+      "id": "231523f2",
       "execution_count": null,
       "outputs": []
     },
@@ -354,7 +354,7 @@
       "source": [
         "*Visualizing Petal Dimensions*: The code `plt.title('Comparison between petal width and length') `sets the title for the plot, while `sns.scatterplot(x=iris_df['petal.length'], y=iris_df['petal.width'])` creates a scatter plot using Seaborn to visualize the relationship between petal length and petal width. This plot helps in examining the correlation between these two features and understanding how they vary with each other in the dataset\n"
       ],
-      "id": "de13cd81"
+      "id": "f5d12152"
     },
     {
       "cell_type": "code",
@@ -364,7 +364,7 @@
         "plt.title('Comparison between petal width and length')\n",
         "sns.scatterplot(x=iris_df['petal.length'], y=iris_df['petal.width']);"
       ],
-      "id": "1005b8b9",
+      "id": "d5ee3b1e",
       "execution_count": null,
       "outputs": []
     },
@@ -374,7 +374,7 @@
       "source": [
         "*Enhanced Scatter Plot with Species for Petal Dimensions*: The code `plt.figure(figsize=(10,9)) `sets the size of the plot, and `plt.title('Comparison between Petal width and length on the basis of species')`adds a title. The `sns.scatterplot(x=iris_df['petal.length'], y=iris_df['petal.width'], hue=iris_df['variety'], s=50)` function creates a scatter plot where petal length and width are plotted with different colors representing species. This visualization facilitates comparison of petal dimensions across different species, helping to identify patterns or clusters. The `plt.show()` command displays the plot.\n"
       ],
-      "id": "870773a8"
+      "id": "a3f72b8f"
     },
     {
       "cell_type": "code",
@@ -385,7 +385,7 @@
         "sns.scatterplot(x=iris_df['petal.length'], y=iris_df['petal.width'], hue = iris_df['variety'], s= 50);\n",
         "plt.show()"
       ],
-      "id": "8228dfc1",
+      "id": "0c3e47d3",
       "execution_count": null,
       "outputs": []
     },
@@ -399,7 +399,7 @@
         "\n",
         "Now let’s visualize all the columns relationship using pair plots.\n"
       ],
-      "id": "582d5e2d"
+      "id": "80fd008f"
     },
     {
       "cell_type": "code",
@@ -408,7 +408,7 @@
         "plt.figure(figsize=(6,5))\n",
         "sns.pairplot(iris_df,hue=\"variety\",height=3);"
       ],
-      "id": "a83a5b84",
+      "id": "02bddc4c",
       "execution_count": null,
       "outputs": []
     },
@@ -420,7 +420,7 @@
         "\n",
         "Calculating Feature Correlation: The code iris_num.corr() computes the correlation matrix for the numeric columns in the iris_num DataFrame. This matrix shows the pairwise correlation coefficients between features, helping to identify linear relationships and dependencies among them, which can be crucial for feature selection and understanding multicollinearity in the dataset.\n"
       ],
-      "id": "5c2cca56"
+      "id": "ae71a8ca"
     },
     {
       "cell_type": "code",
@@ -428,7 +428,7 @@
       "source": [
         "iris_num.corr()"
       ],
-      "id": "63fc2d95",
+      "id": "6b076415",
       "execution_count": null,
       "outputs": []
     },
@@ -438,7 +438,7 @@
       "source": [
         "A visual representation of the correlation matrix is shown below.\n"
       ],
-      "id": "1f6867ef"
+      "id": "64fd6ebb"
     },
     {
       "cell_type": "code",
@@ -447,7 +447,7 @@
         "fig = plt.figure(figsize = (6,5))\n",
         "sns.heatmap(iris_num.corr(), cmap='Blues', annot = True);"
       ],
-      "id": "cd1c7872",
+      "id": "e33cf897",
       "execution_count": null,
       "outputs": []
     },
@@ -458,7 +458,7 @@
         "From the above heatmap, we see that petal length and petal width have a high correlation, petal width and sepal length have good correlation as well as petal length and sepal length have good correlations.\n",
         "*Frequency distribution of feature set*: Let’s see the distribution of data for the various columns of our data set.\n"
       ],
-      "id": "c57d0de6"
+      "id": "ba19cd84"
     },
     {
       "cell_type": "code",
@@ -474,7 +474,7 @@
         "axes[1,1].set_title(\"Distribution of Petal Length\")\n",
         "axes[1,1].hist(iris_df['petal.length'], bins=6);"
       ],
-      "id": "cf0e851d",
+      "id": "1294a4b8",
       "execution_count": null,
       "outputs": []
     },
@@ -484,7 +484,7 @@
       "source": [
         "## 3.d Univariate Feature Analysis\n"
       ],
-      "id": "c21c55a0"
+      "id": "83b92278"
     },
     {
       "cell_type": "code",
@@ -492,7 +492,7 @@
       "source": [
         "sns.FacetGrid(iris_df,hue=\"variety\",height=5).map(sns.distplot,\"petal.length\").add_legend();"
       ],
-      "id": "960c2751",
+      "id": "3f272be0",
       "execution_count": null,
       "outputs": []
     },
@@ -502,7 +502,7 @@
       "source": [
         "**Univariate feature analysis**: The code sns.FacetGrid(iris_df, hue=\"variety\", height=5).map(sns.distplot, \"petal.width\").add_legend() creates a FacetGrid using Seaborn library to visualize the distribution of petal.width across different species in the iris_df DataFrame. The hue=\"variety\" parameter ensures that the distribution plots are colored according to the species, while height=5 sets the size of the plots. This visualization helps in analyzing the distribution and density of the petal width feature for each species, providing insights into how this feature varies across different classes.\n"
       ],
-      "id": "5ca1764e"
+      "id": "d2f76735"
     },
     {
       "cell_type": "code",
@@ -510,7 +510,7 @@
       "source": [
         "sns.FacetGrid(iris_df,hue=\"variety\",height=5).map(sns.distplot,\"petal.width\").add_legend();"
       ],
-      "id": "4fc3b406",
+      "id": "ada0ba12",
       "execution_count": null,
       "outputs": []
     },
@@ -520,7 +520,7 @@
       "source": [
         "sns.FacetGrid(iris_df,hue=\"variety\",height=5).map(sns.distplot,\"sepal.length\").add_legend();"
       ],
-      "id": "6f95148c",
+      "id": "f39df566",
       "execution_count": null,
       "outputs": []
     },
@@ -530,7 +530,7 @@
       "source": [
         "sns.FacetGrid(iris_df,hue=\"variety\",height=5).map(sns.distplot,\"sepal.width\").add_legend();"
       ],
-      "id": "27498e5d",
+      "id": "b85164ec",
       "execution_count": null,
       "outputs": []
     },
@@ -543,7 +543,7 @@
         "\n",
         "Boxplots for Feature Analysis: The code `fig, axes = plt.subplots(2, 2, figsize=(16,9))` creates a 2x2 grid of subplots with a figure size of 16x9 inches. Each `sns.boxplot()` function call plots the distribution of a specific feature `(petal.width, petal.length, sepal.length, sepal.width)` against the `variety` of the iris species. The `orient='v'` parameter specifies vertical boxplots. This visualization helps in comparing the distributions of different features across species, highlighting differences in feature ranges, central tendencies, and potential outliers. The `plt.show()` command displays all the plots.\n"
       ],
-      "id": "9a7687f4"
+      "id": "16d655e8"
     },
     {
       "cell_type": "code",
@@ -556,7 +556,7 @@
         "sns.boxplot(  y=\"sepal.width\", x= \"variety\", data=iris_df,  orient='v' , ax=axes[1, 1])\n",
         "plt.show()"
       ],
-      "id": "345cac6f",
+      "id": "2489ef92",
       "execution_count": null,
       "outputs": []
     },
@@ -573,7 +573,7 @@
         "- The virginica species has the longest features widths and lengths as compared to others.\n",
         "We can further see the distributions using the violin plot on our dataset\n"
       ],
-      "id": "2493a70f"
+      "id": "53aaf211"
     },
     {
       "cell_type": "code",
@@ -586,7 +586,7 @@
         "sns.violinplot(y=\"sepal.length\", x= \"variety\", data=iris_df,  orient='v' , ax=axes[1, 1])\n",
         "plt.show()"
       ],
-      "id": "1cf5512a",
+      "id": "546f47c6",
       "execution_count": null,
       "outputs": []
     },
@@ -616,7 +616,7 @@
         "## Importing Required Libraries\n",
         "To perform machine learning tasks and evaluate model performance, the following libraries are imported:\n"
       ],
-      "id": "81e4d01f"
+      "id": "00f25928"
     },
     {
       "cell_type": "code",
@@ -626,7 +626,7 @@
         "from sklearn.model_selection import train_test_split\n",
         "import joblib"
       ],
-      "id": "8eeda2b9",
+      "id": "90cd6171",
       "execution_count": null,
       "outputs": []
     },
@@ -639,7 +639,7 @@
         "- **`joblib`**: This library is used for saving and loading Python objects efficiently, particularly for persisting trained models for future use.\n",
         "In the next immediate step, we resample and split the dataset for training and testing. This can be done as follows:\n"
       ],
-      "id": "5a6e6dbc"
+      "id": "1e415815"
     },
     {
       "cell_type": "code",
@@ -658,7 +658,7 @@
         "X_train, X_test, y_train, y_test = train_test_split(\n",
         "    X, y, test_size=0.3, random_state=seed, stratify=y)"
       ],
-      "id": "a113b0a3",
+      "id": "f9135728",
       "execution_count": null,
       "outputs": []
     },
@@ -673,7 +673,7 @@
         "\n",
         "**Step -1: Import Required Libraries** Here we need only the LogisticRegression instance from the sklearn library. This can be done as follows.\n"
       ],
-      "id": "59f19658"
+      "id": "3b64fdbc"
     },
     {
       "cell_type": "code",
@@ -681,7 +681,7 @@
       "source": [
         "from sklearn.linear_model import LogisticRegression"
       ],
-      "id": "87292adf",
+      "id": "69abf6a2",
       "execution_count": null,
       "outputs": []
     },
@@ -693,7 +693,7 @@
         "\n",
         "Create an instance of the Logistic Regression model:\n"
       ],
-      "id": "4e15228f"
+      "id": "80efd466"
     },
     {
       "cell_type": "code",
@@ -701,7 +701,7 @@
       "source": [
         "model = LogisticRegression(max_iter=200)"
       ],
-      "id": "705e0e94",
+      "id": "7f358de1",
       "execution_count": null,
       "outputs": []
     },
@@ -713,7 +713,7 @@
         "\n",
         "Fit the model to the training data:\n"
       ],
-      "id": "6cde4f14"
+      "id": "f9d20bb9"
     },
     {
       "cell_type": "code",
@@ -721,7 +721,7 @@
       "source": [
         "model.fit(X_train, y_train.values.ravel())"
       ],
-      "id": "d528260b",
+      "id": "98b35306",
       "execution_count": null,
       "outputs": []
     },
@@ -732,7 +732,7 @@
         "**Step-4: Make Predictions**\n",
         "Use the trained model to predict the labels for the test set:\n"
       ],
-      "id": "996c4280"
+      "id": "f27d0dcf"
     },
     {
       "cell_type": "code",
@@ -740,7 +740,7 @@
       "source": [
         "y_pred = model.predict(X_test)"
       ],
-      "id": "c1a073bf",
+      "id": "8b612f18",
       "execution_count": null,
       "outputs": []
     },
@@ -752,7 +752,7 @@
         "\n",
         "Assess the model’s performance using confussion matrix, model accuracy and a detailed classification report:\n"
       ],
-      "id": "ad1ad81d"
+      "id": "298dd88c"
     },
     {
       "cell_type": "code",
@@ -765,7 +765,7 @@
         "# Generate classification report\n",
         "report = classification_report(y_test, y_pred)"
       ],
-      "id": "cf42bec1",
+      "id": "0da0629d",
       "execution_count": null,
       "outputs": []
     },
@@ -781,7 +781,7 @@
         "plt.ylabel('True Labels')\n",
         "plt.show()"
       ],
-      "id": "c1159f0c",
+      "id": "ad1ec0e0",
       "execution_count": null,
       "outputs": []
     },
@@ -793,7 +793,7 @@
         "print(\"Classification Report:\")\n",
         "print(report)"
       ],
-      "id": "10dfff61",
+      "id": "dd25af8f",
       "execution_count": null,
       "outputs": []
     },
@@ -808,7 +808,7 @@
         "\n",
         "**Step -1: Import Required Libraries** Here we need only the LogisticRegression instance from the sklearn library. This can be done as follows.\n"
       ],
-      "id": "1be98e7b"
+      "id": "173288cf"
     },
     {
       "cell_type": "code",
@@ -816,7 +816,7 @@
       "source": [
         "from sklearn.neighbors import KNeighborsClassifier"
       ],
-      "id": "e2512375",
+      "id": "d2f190b6",
       "execution_count": null,
       "outputs": []
     },
@@ -828,7 +828,7 @@
         "\n",
         "Create an instance of the K-NN model:\n"
       ],
-      "id": "f596def7"
+      "id": "55d6a568"
     },
     {
       "cell_type": "code",
@@ -836,7 +836,7 @@
       "source": [
         "model = KNeighborsClassifier(n_neighbors=5)"
       ],
-      "id": "2329243a",
+      "id": "87fff8f9",
       "execution_count": null,
       "outputs": []
     },
@@ -848,7 +848,7 @@
         "\n",
         "Fit the model to the training data:\n"
       ],
-      "id": "3b5786cc"
+      "id": "0a25b07e"
     },
     {
       "cell_type": "code",
@@ -856,7 +856,7 @@
       "source": [
         "model.fit(X_train, y_train.values.ravel())"
       ],
-      "id": "813a9e99",
+      "id": "f7cf96e0",
       "execution_count": null,
       "outputs": []
     },
@@ -868,7 +868,7 @@
         "\n",
         "Use the trained model to predict the labels for the test set:\n"
       ],
-      "id": "0a824805"
+      "id": "2262923f"
     },
     {
       "cell_type": "code",
@@ -876,7 +876,7 @@
       "source": [
         "y_pred = model.predict(X_test)"
       ],
-      "id": "d04fda0d",
+      "id": "a33deaf1",
       "execution_count": null,
       "outputs": []
     },
@@ -888,7 +888,7 @@
         "\n",
         "Assess the model’s performance using confussion matrix, model accuracy and a detailed classification report:\n"
       ],
-      "id": "5d69c6d4"
+      "id": "04c9dfa9"
     },
     {
       "cell_type": "code",
@@ -901,7 +901,7 @@
         "# Generate classification report\n",
         "report = classification_report(y_test, y_pred)"
       ],
-      "id": "b4d9c228",
+      "id": "a43f584a",
       "execution_count": null,
       "outputs": []
     },
@@ -917,7 +917,7 @@
         "plt.ylabel('True Labels')\n",
         "plt.show()"
       ],
-      "id": "6e16d6d6",
+      "id": "972bf475",
       "execution_count": null,
       "outputs": []
     },
@@ -929,7 +929,7 @@
         "print(\"Classification Report:\")\n",
         "print(report)"
       ],
-      "id": "667cb4ea",
+      "id": "9faca90c",
       "execution_count": null,
       "outputs": []
     },
@@ -942,7 +942,7 @@
         "\n",
         "**Step -1: Import Required Libraries Here we need only the SVC instance from the sklearn library. This can be done as follows.\n"
       ],
-      "id": "3d039591"
+      "id": "7210fdfa"
     },
     {
       "cell_type": "code",
@@ -950,7 +950,7 @@
       "source": [
         "from sklearn.svm import SVC"
       ],
-      "id": "ad6769d0",
+      "id": "e4253835",
       "execution_count": null,
       "outputs": []
     },
@@ -962,7 +962,7 @@
         "\n",
         "Create an instance of the SVC model:\n"
       ],
-      "id": "a62eee00"
+      "id": "6e31e77c"
     },
     {
       "cell_type": "code",
@@ -970,7 +970,7 @@
       "source": [
         "model = SVC(kernel='linear', C=1.0, random_state=seed)"
       ],
-      "id": "94632ad5",
+      "id": "c59ef878",
       "execution_count": null,
       "outputs": []
     },
@@ -982,7 +982,7 @@
         "\n",
         "Fit the model to the training data:\n"
       ],
-      "id": "86d8a086"
+      "id": "c1b8b2af"
     },
     {
       "cell_type": "code",
@@ -990,7 +990,7 @@
       "source": [
         "model.fit(X_train, y_train.values.ravel())"
       ],
-      "id": "b9896942",
+      "id": "c2b1a890",
       "execution_count": null,
       "outputs": []
     },
@@ -1002,7 +1002,7 @@
         "\n",
         "Use the trained model to predict the labels for the test set:\n"
       ],
-      "id": "a69a9511"
+      "id": "5e4b6878"
     },
     {
       "cell_type": "code",
@@ -1010,7 +1010,7 @@
       "source": [
         "y_pred = model.predict(X_test)"
       ],
-      "id": "845d4f8f",
+      "id": "aa223296",
       "execution_count": null,
       "outputs": []
     },
@@ -1022,7 +1022,7 @@
         "\n",
         "Assess the model’s performance using confussion matrix, model accuracy and a detailed classification report:\n"
       ],
-      "id": "982d7e98"
+      "id": "c4d7c0a0"
     },
     {
       "cell_type": "code",
@@ -1035,7 +1035,7 @@
         "# Generate classification report\n",
         "report = classification_report(y_test, y_pred)"
       ],
-      "id": "b418c832",
+      "id": "b35c5f32",
       "execution_count": null,
       "outputs": []
     },
@@ -1051,7 +1051,7 @@
         "plt.ylabel('True Labels')\n",
         "plt.show()"
       ],
-      "id": "b9fc532b",
+      "id": "294a4f7c",
       "execution_count": null,
       "outputs": []
     },
@@ -1063,7 +1063,7 @@
         "print(\"Classification Report:\")\n",
         "print(report)"
       ],
-      "id": "fa009554",
+      "id": "ec997515",
       "execution_count": null,
       "outputs": []
     },
@@ -1076,7 +1076,7 @@
         "\n",
         "**Step -1: Import Required Libraries** Here we need only the Random Forest instance from the sklearn library. This can be done as follows.\n"
       ],
-      "id": "95109aee"
+      "id": "9e7ee49b"
     },
     {
       "cell_type": "code",
@@ -1084,7 +1084,7 @@
       "source": [
         "from sklearn.ensemble import RandomForestClassifier"
       ],
-      "id": "e0cbfb8e",
+      "id": "c5f60656",
       "execution_count": null,
       "outputs": []
     },
@@ -1096,7 +1096,7 @@
         "\n",
         "Create an instance of the RandomForest model:\n"
       ],
-      "id": "a7b6eac6"
+      "id": "c36fb78e"
     },
     {
       "cell_type": "code",
@@ -1104,7 +1104,7 @@
       "source": [
         "Rf_model = RandomForestClassifier(n_estimators=100, random_state=seed)"
       ],
-      "id": "909e69c6",
+      "id": "3baac6ea",
       "execution_count": null,
       "outputs": []
     },
@@ -1116,7 +1116,7 @@
         "\n",
         "Fit the model to the training data:\n"
       ],
-      "id": "08c49bc4"
+      "id": "a6fd0791"
     },
     {
       "cell_type": "code",
@@ -1124,7 +1124,7 @@
       "source": [
         "Rf_model.fit(X_train, y_train.values.ravel())"
       ],
-      "id": "408fac14",
+      "id": "bca78e31",
       "execution_count": null,
       "outputs": []
     },
@@ -1136,7 +1136,7 @@
         "\n",
         "Use the trained model to predict the labels for the test set:\n"
       ],
-      "id": "6064365f"
+      "id": "eed2db21"
     },
     {
       "cell_type": "code",
@@ -1144,7 +1144,7 @@
       "source": [
         "y_pred = Rf_model.predict(X_test)"
       ],
-      "id": "21863faa",
+      "id": "87cdaec2",
       "execution_count": null,
       "outputs": []
     },
@@ -1156,7 +1156,7 @@
         "\n",
         "Assess the model’s performance using confussion matrix, model accuracy and a detailed classification report:\n"
       ],
-      "id": "538a0d03"
+      "id": "d09c0e15"
     },
     {
       "cell_type": "code",
@@ -1169,7 +1169,7 @@
         "# Generate classification report\n",
         "report = classification_report(y_test, y_pred)"
       ],
-      "id": "57fe1a1d",
+      "id": "85b5d8c2",
       "execution_count": null,
       "outputs": []
     },
@@ -1185,7 +1185,7 @@
         "plt.ylabel('True Labels')\n",
         "plt.show()"
       ],
-      "id": "14f0f27d",
+      "id": "db3a39bc",
       "execution_count": null,
       "outputs": []
     },
@@ -1197,7 +1197,7 @@
         "print(\"Classification Report:\")\n",
         "print(report)"
       ],
-      "id": "11dc0d2b",
+      "id": "ebc62005",
       "execution_count": null,
       "outputs": []
     },
@@ -1210,7 +1210,7 @@
         "## 5. Model Selection\n",
         "After training the model, we will evaluate its performance using various metrics such as accuracy and classification report. This will help us understand how well the model is performing and whether any improvements are needed. In this context, the RandomForestClassifier model is the winner. So we will select and save this model for deployment.\n"
       ],
-      "id": "c0c57a0d"
+      "id": "93f85dcf"
     },
     {
       "cell_type": "code",
@@ -1218,7 +1218,7 @@
       "source": [
         "joblib.dump(Rf_model, 'rf_model.sav')"
       ],
-      "id": "0504052b",
+      "id": "728c1c5a",
       "execution_count": null,
       "outputs": []
     }
